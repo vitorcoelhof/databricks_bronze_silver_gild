@@ -11,7 +11,7 @@ CREATE OR REFRESH STREAMING TABLE silver.dim_clientes
   CONSTRAINT pais_valido EXPECT (pais IN ('Brasil', 'Alemanha', 'Estados Unidos')) ON VIOLATION DROP ROW,
   CONSTRAINT estado_brasil_valido EXPECT (
     CASE 
-      WHEN pais = 'Brasil' THEN estado IN ('RS', 'PA', 'AL', 'MT', 'SP', 'RJ', 'MG', 'PR', 'SC', 'BA', 'GO', 'PE', 'CE', 'MA', 'PB', 'AM', 'ES', 'RN', 'AC', 'AP', 'RO', 'RR', 'TO', 'MS', 'DF')
+      WHEN pais = 'Brasil' THEN estado IN ('SE','RS', 'PA', 'AL', 'MT', 'SP', 'RJ', 'MG', 'PR', 'SC', 'BA', 'GO', 'PE', 'CE', 'MA', 'PB', 'AM', 'ES', 'RN', 'AC', 'AP', 'RO', 'RR', 'TO', 'MS', 'DF')
       ELSE true
     END
   ) ON VIOLATION DROP ROW
